@@ -7,4 +7,5 @@ Tweaked to fit well with the Plasma 5 desktop
 
 ## Full Transparent Location Bar
 Original (Unknown)
+
 License - GPL
