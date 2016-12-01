@@ -1,0 +1,449 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* INFO */
+/*
+   Name: Firefox theme: Linux GTK+ Native [Fx 29+]
+   Version: 0.2.1.16
+   Author: https://userstyles.org/users/22330/
+   Source: https://userstyles.org/styles/132191/
+   Licensing: https://creativecommons.org/publicdomain/zero/1.0/
+*/
+
+:root {
+  --tab-min-height: 24px;
+}
+
+@-moz-document url("chrome://browser/content/browser.xul") {
+
+  /* TOOLBARS IN GENERAL */
+  #nav-bar:not(:-moz-lwtheme),
+  #PersonalToolbar:not(:-moz-lwtheme) {
+    box-shadow: none !important;
+    -moz-appearance: toolbar !important;
+  }
+
+  #toolbar-menubar[autohide="true"] ~ #nav-bar:not(:-moz-lwtheme) {
+    -moz-appearance: toolbar !important;
+    padding-right: 0 !important;
+  }
+
+  #nav-bar:-moz-lwtheme,
+  #PersonalToolbar:-moz-lwtheme {
+    box-shadow: none !important;
+    background: none !important;
+    border: 0 !important;
+  }
+
+  #TabsToolbar:not([collapsed="true"]) + #nav-bar {
+    border-top: 0 !important;
+  }
+
+  #PersonalToolbar {
+    -moz-box-ordinal-group: 15 !important;
+  }
+
+  /* TABS TOOLBAR */
+  #TabsToolbar {
+    margin-top: 0 !important;
+    -moz-box-ordinal-group: 20 !important;
+  }
+
+  #TabsToolbar:before,
+  #TabsToolbar:after {
+    display: none !important;
+  }
+
+  #TabsToolbar:not(:-moz-lwtheme) {
+    -moz-appearance: none !important;
+    color: windowtext;
+  }
+
+  #TabsToolbar:-moz-lwtheme {
+    border: none !important;
+  }
+
+  #TabsToolbar .scrollbutton-up,
+  #TabsToolbar .scrollbutton-down,
+  #TabsToolbar > toolbarbutton {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #navigator-toolbox:not([brighttext]) #TabsToolbar .scrollbutton-up:not(:-moz-lwtheme),
+  #navigator-toolbox:not([brighttext]) #TabsToolbar .scrollbutton-down:not(:-moz-lwtheme){
+    list-style-image: url("chrome://browser/skin/tabbrowser/tab-arrow-left.png") !important;
+  }
+
+  #navigator-toolbox[brighttext] #TabsToolbar .scrollbutton-up:not(:-moz-lwtheme),
+  #navigator-toolbox[brighttext] #TabsToolbar .scrollbutton-down:not(:-moz-lwtheme) {
+    list-style-image: url("chrome://browser/skin/tabbrowser/tab-arrow-left-inverted.png") !important;
+  }
+
+  .arrowscrollbox-scrollbox {
+    -moz-padding-start: 0 !important;
+    -moz-padding-end: 0 !important;
+  }
+
+  .tabs-newtab-button {
+    -moz-appearance: toolbarbutton !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: calc(var(--tab-min-height) + 4px) !important;
+  }
+
+  /* TABS */
+  #TabsToolbar .tabbrowser-tab:not([selected="true"]) label:not(:-moz-lwtheme) {
+    color: WindowText !important;
+  }
+
+  .tabbrowser-tab {
+    -moz-appearance: tab !important;
+  }
+
+  .tabbrowser-tab:not(:last-of-type) {
+    margin-right: -1px !important;
+  }
+
+  .tabbrowser-tab:before,
+  .tabbrowser-tab:after {
+    display: none !important;
+  }
+
+  .tabbrowser-tab:not([pinned="true"]) .tab-content {
+    -moz-padding-end: 2px !important;
+    -moz-padding-start: 2px !important;
+  }
+
+  .tab-background,
+  .tabbrowser-tab .tab-background-start,
+  .tabbrowser-tab .tab-background-middle,
+  .tabbrowser-tab .tab-background-end {
+    opacity: 0 !important;
+  }
+
+
+
+  /* FORCE NATIVE STYLE TOOLBAR BUTTONS */
+  toolbarbutton[cui-areatype="toolbar"],
+  toolbaritem[cui-areatype="toolbar"] > toolbarbutton,
+  #PanelUI-menu-button {
+    -moz-appearance: toolbarbutton !important;
+    min-width: 32px !important;
+  }
+
+  toolbar:not([brighttext]) toolbarbutton[cui-areatype="toolbar"] > dropmarker {
+    display: -moz-box !important;
+  }
+
+  toolbar[brighttext] toolbarbutton[cui-areatype="toolbar"] > dropmarker {
+    display: -moz-box !important;
+    -moz-appearance: none !important;
+    width: 9px !important;
+    height: 7px !important;
+    background-image: url("chrome://browser/skin/tabbrowser/alltabs-inverted.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50% !important;
+  }
+
+  toolbar:not([brighttext]) #bookmarks-menu-button[cui-areatype="toolbar"] > dropmarker:after {
+    display: -moz-box !important;
+    content: "" !important;
+    -moz-appearance: toolbarbutton-dropdown !important;
+  }
+
+  toolbar[brighttext] #bookmarks-menu-button[cui-areatype="toolbar"] > dropmarker {
+    background: none !important;
+  }
+
+  toolbar[brighttext] #bookmarks-menu-button[cui-areatype="toolbar"] > dropmarker:after {
+    display: -moz-box !important;
+    content: "" !important;
+    width: 9px !important;
+    height: 7px !important;
+    background-image: url("chrome://browser/skin/tabbrowser/alltabs-inverted.png") !important;
+  }
+
+  toolbarbutton[cui-areatype="toolbar"] toolbarbutton:not([disabled="true"]):hover {
+    outline: 1px solid ThreeDShadow !important;
+   -moz-outline-radius: 2px !important;
+  }
+
+  toolbarbutton[cui-areatype="toolbar"] image,
+  toolbaritem[cui-areatype="toolbar"] > toolbarbutton image,
+  toolbarbutton[cui-areatype="toolbar"] stack,
+  toolbarbutton[cui-areatype="toolbar"] dropmarker,
+  #PanelUI-menu-button stack {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  toolbarbutton[cui-areatype="toolbar"] > image,
+  toolbaritem[cui-areatype="toolbar"] > toolbarbutton > image,
+  toolbarbutton[cui-areatype="toolbar"] > stack,
+  toolbarbutton[cui-areatype="toolbar"] > dropmarker,
+  toolbarbutton[cui-areatype="toolbar"] > toolbarbutton > image,
+  toolbarbutton[cui-areatype="toolbar"] > toolbarbutton > stack,
+  toolbarbutton[cui-areatype="toolbar"] > toolbarbutton > dropmarker,
+  #PanelUI-menu-button > stack {
+    padding: 0 !important;
+  }
+
+  /* SOUND ICONS */
+  .tab-icon-sound[soundplaying] {
+    list-style-image: url("moz-icon://stock/audio-volume-high?size=menu") !important;
+  }
+
+  .tab-icon-sound[muted] {
+    list-style-image: url("moz-icon://stock/audio-volume-muted?size=menu") !important;
+  }
+
+  /* ALL TABS BUTTON */
+  #navigator-toolbox #alltabs-button {
+    list-style-image: url("chrome://browser/skin/tabbrowser/alltabs.png") !important;
+  }
+
+  #navigator-toolbox[brighttext] #alltabs-button {
+    list-style-image: url("chrome://browser/skin/tabbrowser/alltabs-inverted.png") !important;
+  }
+
+  /* NEW TAB BUTTON */
+  .tabs-newtab-button > .toolbarbutton-icon,
+  #new-tab-button > .toolbarbutton-icon {
+    list-style-image: url("moz-icon://stock/list-add?size=menu") !important;
+  }
+
+  /* TAB CLOSE BUTTON */
+  #TabsToolbar toolbarbutton[class="tab-close-button close-icon"] {
+    -moz-appearance: toolbarbutton !important;
+    width: 22px !important;
+    height: 22px !important;
+    padding: 0 !important;
+  }
+
+  #TabsToolbar toolbarbutton[class="tab-close-button close-icon"] > .toolbarbutton-icon {
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 !important;
+    background-image: -moz-image-rect(url("moz-icon://stock/window-close?size=menu"), 0, 16, 16, 0) !important;
+    background-position: center !important;
+  }
+
+  /* VARIOUS TOOLBAR BUTTONS AND THEIR ICONS */
+  #back-button {
+    list-style-image: url("moz-icon://stock/go-previous?size=menu") !important;
+    -moz-image-region: rect(0px, 16px, 16px, 0px) !important;
+  }
+
+  #forward-button {
+    list-style-image: url("moz-icon://stock/go-next?size=menu") !important;
+    -moz-image-region: rect(-1px, 17px, 17px, -1px) !important;
+    margin-left: 0 !important;
+  }
+
+  #notification-popup-box {
+    padding-left: 5px !important;
+    margin-right: 0 !important;
+  }
+
+  #identity-box {
+    padding-left: 5px !important;
+  }
+
+  #urlbar-go-button {
+    list-style-image: url("moz-icon://stock/media-playback-start?size=menu") !important;
+    -moz-image-region: rect(0px, 16px, 16px, 0px) !important;
+  }
+
+  #urlbar-reload-button {
+    list-style-image: url("moz-icon://stock/view-refresh?size=menu") !important;
+    -moz-image-region: rect(0px, 16px, 16px, 0px) !important;
+  }
+
+  #urlbar-stop-button {
+    list-style-image: url("moz-icon://stock/process-stop?size=menu") !important;
+    -moz-image-region: rect(0px, 16px, 16px, 0px) !important;
+  }
+
+    /* SET SOME IMAGE REGIONS */
+  #bookmarks-menu-button[cui-areatype="toolbar"],
+  #bookmarks-menu-button[cui-areatype="toolbar"] > dropmarker > image,
+  #downloads-button[cui-areatype="toolbar"],
+  toolbarbutton[cui-areatype="toolbar"],
+  #edit-controls[cui-areatype="toolbar"] > toolbarbutton > .toolbarbutton-icon,
+  #zoom-controls[cui-areatype="toolbar"] > toolbarbutton > .toolbarbutton-icon,
+  #PanelUI-menu-button {
+    -moz-image-region: rect(0px, 16px, 16px, 0px) !important;
+  }
+
+  /* BOOKMARK BUTTON */
+  #bookmarks-menu-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/bookmark-new?size=menu") !important;
+  }
+
+  #bookmarks-menu-button[cui-areatype="toolbar"][starred] {
+    list-style-image: url("chrome://browser/skin/Toolbar-small.png") !important;
+    -moz-image-region: rect(16px, 144px, 32px, 128px) !important;
+  }
+
+  /* FAVORITES MENU */
+  #bookmarks-menu-button[cui-areatype="toolbar"] > dropmarker > image {
+    list-style-image: url("chrome://browser/skin/Toolbar-small.png") !important;
+    -moz-image-region: rect(0px, 48px, 16px, 32px) !important;
+  }
+
+  /* DOWNLOADS BUTTON (WIP) */
+  #downloads-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/emblem-downloads?size=menu") !important;
+  }
+
+  #downloads-indicator-icon {
+    min-width: 16px !important;
+    max-width: 16px !important;
+    min-height: 16px !important;
+    background-image: url("moz-icon://stock/emblem-downloads?size=menu") !important;
+  }
+
+  /* HOME BUTTON */
+  #home-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/go-home?size=menu") !important;
+  }
+
+  /* NEW WINDOW BUTTON */
+  #new-window-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/window-new?size=menu") !important;
+  }
+
+  #privatebrowsing-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/face-devilish?size=menu") !important;
+  }
+
+  /* PRINT BUTTON */
+  #print-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/document-print?size=menu") !important;
+  }
+
+  /* FULLSRCEEN BUTTON */
+  #fullscreen-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/view-fullscreen?size=menu") !important;
+  }
+
+  /* FIND BUTTON */
+  #find-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/edit-find?size=menu") !important;
+  }
+
+  /* SAVE BUTTON */
+  #save-page-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/document-save-as?size=menu") !important;
+  }
+
+  /* DEVELOPER BUTTON */
+  #developer-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/emblem-system?size=menu") !important;
+  }
+
+  /* ADD-ONS BUTTON */
+  #add-ons-button[cui-areatype="toolbar"] {
+    list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric-16.png") !important;
+  }
+
+  /* PREFERENCES BUTTON */
+  #preferences-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/preferences-system?size=menu") !important;
+  }
+
+  /* OPEN BUTTON */
+  #open-file-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/document-open?size=menu") !important;
+  }
+
+  /* EDITING CONTROLS */
+  #edit-controls[cui-areatype="toolbar"] > #cut-button {
+    list-style-image: url("moz-icon://stock/edit-cut?size=menu") !important;
+  }
+
+  #edit-controls[cui-areatype="toolbar"] > #copy-button {
+    list-style-image: url("moz-icon://stock/edit-copy?size=menu") !important;
+  }
+
+  #edit-controls[cui-areatype="toolbar"] > #paste-button {
+    list-style-image: url("moz-icon://stock/edit-paste?size=menu") !important;
+  }
+
+  /* ZOOM CONTROLS */
+  #zoom-controls[cui-areatype="toolbar"] > #zoom-in-button {
+    list-style-image: url("moz-icon://stock/zoom-in?size=menu") !important;
+  }
+
+  #zoom-controls[cui-areatype="toolbar"] > #zoom-out-button {
+    list-style-image: url("moz-icon://stock/zoom-out?size=menu") !important;
+  }
+
+  /* SIDEBAR ICON */
+  #sidebar-button[cui-areatype="toolbar"] {
+    list-style-image: url("chrome://browser/skin/Toolbar.png") !important;
+    -moz-image-region: rect(0px, 684px, 18px, 666px) !important;
+  }
+
+  toolbar[brighttext] #sidebar-button[cui-areatype="toolbar"] {
+    list-style-image: url("chrome://browser/skin/Toolbar-inverted.png") !important;
+  }
+
+  /* CHARACTER ENCODING */
+  #characterencoding-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/accessories-character-map?size=menu") !important;
+  }
+
+  /* EMAIL LINK */
+  #email-link-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/mail-send?size=menu") !important;
+  }
+
+  /* POCKET BUTTON */
+  #pocket-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/mail-attachment?size=menu") !important;
+  }
+
+  /* FIREFOX HELLO */
+  #loop-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/face-smile?size=menu") !important;
+  }
+
+  #social-share-button[cui-areatype="toolbar"] {
+    list-style-image: url("moz-icon://stock/document-send?size=menu") !important;
+  }
+
+  /* Don't use native icons for these guys. Use browser-integrated icons. */
+  #history-panelmenu[cui-areatype="toolbar"],
+  #feed-button[cui-areatype="toolbar"],
+  #sync-button[cui-areatype="toolbar"] {
+    list-style-image: url("chrome://browser/skin/Toolbar-small.png") !important;
+  }
+
+  /* HISTORY PANEL ICON */
+  #history-panelmenu[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0px, 32px, 16px, 16px) !important;
+  }
+
+  /* FEED BUTTON */
+  #feed-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0px, 112px, 16px, 96px) !important;
+  }
+
+  /* SYNC BUTTON */
+  #sync-button[cui-areatype="toolbar"] {
+    -moz-image-region: rect(0px, 96px, 16px, 80px) !important;
+  }
+
+  /* MAIN MENU BUTTON */
+  #PanelUI-menu-button {
+    list-style-image: url("moz-icon://stock/preferences-desktop?size=menu") !important;
+  }
+
+}
