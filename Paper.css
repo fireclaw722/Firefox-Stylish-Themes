@@ -69,6 +69,13 @@ tabs#tabbrowser-tabs {
   margin-right: -22px !important;
 }
 
+/* Nice tab border looks nice */
+.tabbrowser-tab {
+  border: 1px #ccc solid !important;
+  border-bottom: none !important;
+  border-radius: 2px !important;
+}
+
 /* Tabs grow to fill the full width of the tab bar 
 .tabbrowser-tab:not([pinned])[fadein] {
   max-width: 270px !important;
