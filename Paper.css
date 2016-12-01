@@ -90,12 +90,6 @@ tabs#tabbrowser-tabs {
   margin-right: 30px !important;
 }
 
-/* Removes an unwanted gap */
-.tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
-  padding: 0px !important;
-  margin: 0px !important;
-}
-
 /* Removes another unwanted gap */
 #TabsToolbar, #tabbrowser-tabs {
   -moz-appearance: none !important;
