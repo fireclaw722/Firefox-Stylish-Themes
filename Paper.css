@@ -177,7 +177,7 @@ toolbarbutton#new-tab-button,
 }
 
 /* Declares the red X shape used as a close button in the tabs and the findbar */
-.tab-close-button, .findbar-closebutton{
+.tab-close-button[selected=true], .findbar-closebutton{
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4AgQEyAwF8SkWwAAAU1JREFUSMftVU1OwkAU/t7M1BtAyg1Y1ANIQtSiMS5csDLhEISruNETmOiKHUYjopJwAVhwAmngCG3fuBAIttK+utEFL5nNzOR9b76fDLCrvy5KbnxcHFTJ6hsTUqv0OJxJmszO6yVoviPWHbf3Pt48U2lEfQ3gKHLsU9CslfOaB81aGdq+AORbzVfJ8xQAIroEYQzAs6F6W5zVK1mT20g9A/AATHVsWrkUrZ9sbB8W+wCmJiQ/SVfyjmZzXO69BiKAPBBp80yAbSCRQiRtnguwEtGGqr/kebLc9gBMyOGG2x3NC9lU8BJIJt/uImmA4lg0nBL7/Gv6yXJVpTlRedR88zmbU8TkS3NSyKabnEtyUihoPwkqBaHfNC8CktbA2PuVoOTwYZYVKw/DBRk+WQu/Z29zRSbmNggDSYgAwO2O5uRwA4QBMbd3P+D/q0/Uftm2Wz06PQAAAABJRU5ErkJggg==) center no-repeat !important;
   padding: 10px !important;
 }
