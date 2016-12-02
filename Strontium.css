@@ -60,7 +60,6 @@
   height: 38px !important;
 	box-shadow: none !important;
   color: #FFFFFF !important;
-  -moz-box-ordinal-group: 1 !important;
 }
 
 /* Removes some ugly white artifacts around the buttons in the nav bar */
@@ -79,12 +78,14 @@
   background-color: #FCFCFC !important;
 }
 
-/* To place below nav and fav bars */
-/*
+/* To place below nav bars && have nav bar below fav bar */
 #TabsToolbar {
   -moz-box-ordinal-group: 2 !important;
 }
-*/
+
+#nav-bar {
+  -moz-box-ordinal-group: 0 !important;
+}
 
 /* Tabs grow to fill the full width */
 .tabbrowser-tab:not([pinned])[fadein] {
